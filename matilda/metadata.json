@@ -1,6 +1,0 @@
-{
-  "name": "Matilda",
-  "description": "your go-to store for homely jewellery and accesories",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
