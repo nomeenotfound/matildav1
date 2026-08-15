@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { margin: 0; height: 100vh; background: #e0c3bf; overflow: hidden; }
+  .blob1 {
+    position: absolute; top: -20%; left: -10%; width: 70%; height: 70%;
+    background: radial-gradient(circle, #d6aba5 0%, transparent 70%);
+    animation: move1 18s infinite alternate ease-in-out;
+  }
+  .blob2 {
+    position: absolute; bottom: -20%; right: -10%; width: 80%; height: 80%;
+    background: radial-gradient(circle, #ead2ce 0%, transparent 70%);
+    animation: move2 22s infinite alternate ease-in-out;
+  }
+  @keyframes move1 { 100% { transform: translate(20%, 20%) scale(1.1); } }
+  @keyframes move2 { 100% { transform: translate(-20%, -20%) scale(1.2); } }
+</style>
+</head>
+<body>
+  <div class="blob1"></div><div class="blob2"></div>
+</body>
+</html>
