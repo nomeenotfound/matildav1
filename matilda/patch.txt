@@ -1,0 +1,29 @@
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, field: 'mainImage' | 'lifestyleImage' | 'galleryImages', index?: number) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setIsUploading(true);
+    const form = new FormData();
+    form.append('file', file);
+
+    try {
+      const token = localStorage.getItem('admin_token');
+      const res = await fetch('/api/admin/upload', {
+        method: 'POST',
+        headers: { ...(token ? { 'Authorization': `Bearer ${token}` } : {}) },
+        body: form
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error);
+
+      if (field === 'galleryImages' && index !== undefined) {
+        handleArrayChange(index, data.url, 'galleryImages');
+      } else {
+        setFormData({ ...formData, [field]: data.url });
+      }
+    } catch (err: any) {
+      alert(`Upload failed: ${err.message}`);
+    } finally {
+      setIsUploading(false);
+    }
+  };
