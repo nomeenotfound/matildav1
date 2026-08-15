@@ -1,6 +1,0 @@
-{
-  "name": "matilda.",
-  "description": "the valley's finest accessory store for every occasion",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
