@@ -1,7 +1,0 @@
-const fs = require('fs');
-let content = fs.readFileSync('src/components/admin/pages/AdminProducts.tsx', 'utf8');
-content = content.replace(
-  '<div>\n                  <label className="block uppercase tracking-widest text-[10px] text-gray-500 mb-1">Price (₹)</label>\n                  <input required type="number" value={formData.price} onChange={e => setFormData({...formData, price: Number(e.target.value)})} className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:border-[var(--border-admin)]" />\n                </div>',
-  '<div>\n                  <label className="block uppercase tracking-widest text-[10px] text-gray-500 mb-1">Price (₹)</label>\n                  <input required type="number" value={formData.price} onChange={e => setFormData({...formData, price: Number(e.target.value)})} className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:border-[var(--border-admin)]" />\n                </div>\n                <div>\n                  <label className="block uppercase tracking-widest text-[10px] text-gray-500 mb-1">Stock Count</label>\n                  <input required type="number" value={formData.stock_count} onChange={e => setFormData({...formData, stock_count: Number(e.target.value)})} className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:border-[var(--border-admin)]" />\n                </div>'
-);
-fs.writeFileSync('src/components/admin/pages/AdminProducts.tsx', content);
